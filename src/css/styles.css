@@ -1,0 +1,149 @@
+/* ----------------- Fuentes y comportamiento ----------------- */
+:root{
+  --rosa-principal:#F28AB2;
+  --rosa-oscuro:#D974A2;
+  --rosa-claro:#F7C4D0;
+  --gris-texto:#555;
+  --gris-hero:#f6f5f5;       /* Hero */
+  --gris-sobre:#f5f4f4;      /* Sobre */
+  --gris-servicios:#f6f5f5;  /* Servicios */
+  --gris-proceso:#f4f3f3;    /* Proceso/FAQ */
+  --gris-contacto:#f5f4f4;   /* Contacto */
+  --gris-footer:#f2f1f1;     /* Footer */
+}
+
+/* ----------------- Accesibilidad - Skip Link ----------------- */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--rosa-principal);color:#fff;padding:8px 16px;text-decoration:none;z-index:1000;border-radius:0 0 4px 0;font-weight:500;}
+.skip-link:focus{top:0;outline:3px solid #fff;outline-offset:2px;}
+
+/* ----------------- Screen Reader Only ----------------- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;}
+
+body{font-family:'Roboto',sans-serif;color:#333;margin:0;padding:0;width:100%;overflow-x:hidden;scroll-behavior:smooth;}
+h1,h2,h3{font-family:'Great Vibes',cursive;}
+
+/* ----------------- Navbar ----------------- */
+.navbar{background-color:#fff;}
+.navbar-brand{font-family:'Great Vibes',cursive;color:var(--rosa-principal);}
+.navbar-brand:focus{outline:2px solid var(--rosa-principal);outline-offset:2px;border-radius:4px;}
+.nav-link{color:var(--gris-texto)!important;font-weight:500;transition:color .3s;}
+.nav-link:hover{color:var(--rosa-principal)!important;}
+.nav-link:focus{outline:2px solid var(--rosa-principal);outline-offset:2px;border-radius:4px;}
+.navbar-toggler:focus{box-shadow:0 0 0 0.25rem rgba(242,138,178,0.25);}
+
+/* ----------------- Hero Section ----------------- */
+.hero-section{
+  position:relative;width:100vw;max-width:100%;height:85vh;margin:0;padding:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:var(--gris-hero);background-size:cover;background-position:center;background-repeat:no-repeat;
+  image-rendering:-webkit-optimize-contrast;image-rendering:high-quality;-ms-interpolation-mode:bicubic;
+  left:0;right:0;box-sizing:border-box;
+}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.35);z-index:1;}
+.hero-content{position:relative;z-index:2;}
+@keyframes fadeSlideUp{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+.hero-content>*{opacity:0;animation:fadeSlideUp 1s forwards;}
+.hero-tagline{font-size:1.25rem;font-weight:500;color:var(--rosa-principal);text-transform:uppercase;letter-spacing:1px;animation-delay:.3s;}
+.hero-content h1{animation-delay:.6s;color:#fff;}
+.hero-content p.lead{animation-delay:.9s;color:#fff;}
+.hero-content .btn{animation-delay:1.2s;}
+
+/* ----------------- Botones ----------------- */
+.btn-primary{background:var(--rosa-principal);border-color:var(--rosa-principal);}
+.btn-primary:hover{background:var(--rosa-oscuro);border-color:var(--rosa-oscuro);}
+.btn-primary:focus{background:var(--rosa-oscuro);border-color:var(--rosa-oscuro);box-shadow:0 0 0 0.25rem rgba(242,138,178,0.5);}
+.btn-outline-light{color:#fff;border-color:#fff;transition:.3s;}
+.btn-outline-light:hover{background:#fff;color:var(--rosa-principal);border-color:#fff;}
+.btn-outline-light:focus{background:#fff;color:var(--rosa-principal);border-color:#fff;box-shadow:0 0 0 0.25rem rgba(255,255,255,0.5);}
+
+/* ----------------- Fade-in scroll ----------------- */
+.fade-in{opacity:0;transform:translateY(30px);transition:1s ease-out;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+
+/* ----------------- Ajuste scroll navbar fixed ----------------- */
+#inicio,#sobre,#servicios,#proceso,#contacto{scroll-margin-top:80px;}
+
+/* ----------------- Sobre Mi ----------------- */
+#sobre{padding:4rem 0;background:var(--gris-sobre);}
+#sobre h2{font-family:'Roboto',sans-serif;font-size:2.5rem;font-weight:700;color:var(--rosa-principal);margin-bottom:1.5rem;}
+#sobre p{font-size:1.1rem;color:var(--gris-texto);line-height:1.5;margin-bottom:.5rem;}
+.sobre-img{max-height:300px;width:100%;object-fit:contain;border-radius:.5rem;margin:auto;}
+.sobre-tagline{font-size:1rem;font-weight:500;color:var(--rosa-principal);text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem;display:inline-block;}
+.sobre-tagline::after{content:"";display:block;width:50px;height:2px;background:var(--rosa-principal);margin-top:4px;border-radius:1px;}
+.text-rosa{color:var(--rosa-principal);}
+
+/* ----------------- Servicios ----------------- */
+#servicios{padding:4rem 0;background:var(--gris-servicios);}
+#servicios h2{font-family:'Roboto',sans-serif;font-size:2.5rem;font-weight:700;color:var(--rosa-principal);text-align:center;margin-bottom:2.5rem;}
+.servicio-card{text-align:center;background:#fff;border-radius:.5rem;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s;cursor:pointer;max-width:380px;margin:auto;margin-bottom:2rem;perspective:1200px;}
+.servicio-card:hover{transform:translateY(-4px);}
+.servicio-card i{font-size:2.5rem;color:var(--rosa-claro);transition:transform .3s;}
+.servicio-card:hover i{transform:scale(1.15);}
+.servicio-card h5{color:var(--rosa-oscuro);margin:1rem 0 .5rem;}
+.servicio-card p{font-size:.95rem;color:var(--gris-texto);line-height:1.5;margin:0;}
+.servicio-inner{position:relative;width:100%;aspect-ratio:4/3;transform-style:preserve-3d;transition:transform 1s cubic-bezier(0.4,0,0.2,1);}
+.servicio-card.active .servicio-inner{transform:rotateY(180deg);}
+.servicio-front,.servicio-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:.5rem;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem 1rem;box-sizing:border-box;}
+.servicio-front{background:#fff;}
+.servicio-back{transform:rotateY(180deg);background:#fff;display:flex;justify-content:center;align-items:center;padding:10px;box-sizing:border-box;}
+.servicio-back img{width:100%;height:100%;object-fit:contain;border-radius:.5rem;display:block;}
+.ver-mas{display:inline-block;margin-top:1rem;padding:.4rem 1.2rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;color:var(--rosa-principal);border:1px solid var(--rosa-principal);border-radius:2rem;cursor:pointer;transition:.3s;text-decoration:none;background:transparent;font-family:inherit;}
+.ver-mas:hover{background:var(--rosa-principal);color:#fff;transform:translateY(-2px);}
+.ver-mas:focus{outline:2px solid var(--rosa-principal);outline-offset:2px;background:var(--rosa-principal);color:#fff;}
+
+/* ----------------- Proceso de trabajo ----------------- */
+#proceso{padding:4rem 0;background:var(--gris-proceso);}
+#proceso h2,#proceso h3{font-family:'Roboto',sans-serif;color:var(--rosa-principal);text-align:center;margin-bottom:2rem;}
+.proceso-card{background:#fff;text-align:center;padding:2.5rem 1.5rem;border-radius:.5rem;box-shadow:0 4px 12px rgba(0,0,0,.05);height:100%;}
+.proceso-card i{font-size:2.5rem;color:var(--rosa-claro);margin-bottom:1rem;}
+.proceso-card h5{color:var(--rosa-oscuro);margin-bottom:.5rem;}
+.proceso-card p{font-size:.95rem;color:var(--gris-texto);line-height:1.5;margin:0;}
+
+/* ----------------- Preguntas Frecuentes ----------------- */
+#proceso .accordion{margin-top:2rem;padding:0;}
+#proceso .accordion-item{border:0!important;background:transparent;padding:0!important;margin:0;}
+#proceso .accordion-header{padding:0!important;margin:0;border:none!important;}
+#proceso .accordion-button{position:relative;font-weight:500;font-family:'Roboto',sans-serif;font-size:1.6rem;color:var(--rosa-principal);background:none!important;border:none!important;box-shadow:none!important;padding:.2rem 0!important;padding-left:0!important;padding-right:2rem!important;text-align:left;width:100%;margin:0;}
+#proceso .accordion-button:focus{box-shadow:none!important;border:none!important;outline:none!important;}
+#proceso .accordion-button::after{position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--rosa-principal);transition:transform .2s;margin:0;padding:0;}
+#proceso .accordion-button:not(.collapsed)::after{transform:translateY(-50%) rotate(180deg);}
+#proceso .accordion-collapse{padding:0!important;margin:0;border:none!important;}
+#proceso .accordion-body{padding:.1rem 0 1rem 0!important;padding-left:1.5rem!important;padding-right:0!important;font-size:1.25rem;color:var(--gris-texto);line-height:1.5;background:none!important;margin:0!important;text-align:left;}
+
+/* ----------------- Contacto / Formulario ----------------- */
+#contacto{padding:4rem 0;background:var(--gris-contacto);}
+#contacto h2{font-family:'Roboto',sans-serif;font-size:2.5rem;font-weight:700;color:var(--rosa-principal);text-align:center;margin-bottom:1rem;}
+.contact-form{background:#fff;padding:2.5rem;border-radius:.5rem;box-shadow:0 4px 12px rgba(0,0,0,.08);max-width:700px;margin:0 auto;}
+.form-group{margin-bottom:1.5rem;}
+.form-label{display:block;margin-bottom:.5rem;font-weight:500;color:var(--gris-texto);font-size:1rem;}
+.form-label .required{color:var(--rosa-principal);margin-left:2px;}
+.form-control{width:100%;padding:.75rem 1rem;font-size:1rem;line-height:1.5;color:var(--gris-texto);background-color:#fff;border:2px solid #e0e0e0;border-radius:.375rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;font-family:'Roboto',sans-serif;}
+.form-control:focus{outline:0;border-color:var(--rosa-principal);box-shadow:0 0 0 0.2rem rgba(242,138,178,.25);}
+textarea.form-control{resize:vertical;min-height:120px;}
+.error-message{color:#dc3545;font-size:.875rem;margin-top:.25rem;display:block;}
+
+/* ----------------- Footer ----------------- */
+.footer{background:var(--gris-footer);padding:3rem 0 2rem;width:100vw;}
+.footer-tagline{font-family:'Roboto',sans-serif;font-size:2rem;color:var(--rosa-principal);margin-bottom:1.5rem;}
+.footer-contact{display:flex;justify-content:center;align-items:center;gap:2.5rem;flex-wrap:nowrap;margin-bottom:1.5rem;}
+.footer-link{color:var(--gris-texto);font-size:1.1rem;text-decoration:none;transition:color .3s;white-space:nowrap;display:flex;align-items:center;}
+.footer-link i{color:var(--rosa-principal);margin-right:.4rem;}
+.footer-link:hover{color:var(--rosa-oscuro);}
+.footer-link:focus{outline:2px solid var(--rosa-principal);outline-offset:2px;border-radius:4px;color:var(--rosa-oscuro);}
+.footer-copy{font-size:.85rem;color:#999;}
+
+/* ----------------- WhatsApp flotante ----------------- */
+.whatsapp-float{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;transition:transform .3s,box-shadow .3s;text-decoration:none;}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(0,0,0,.35);color:#fff;}
+.whatsapp-float:focus{outline:3px solid #fff;outline-offset:3px;transform:scale(1.1);}
+
+/* ----------------- Responsive ----------------- */
+@media(max-width:768px){
+  #sobre{text-align:center;padding:3rem 0;}.sobre-img{max-height:250px;margin-bottom:1.5rem;}
+  .hero-section{height:70vh;}.hero-section h1{font-size:2.5rem;}.hero-section p{font-size:1.1rem;}.hero-tagline{font-size:1rem;}
+  #servicios .servicio-card{margin-bottom:2rem;}
+  #proceso h2{font-size:2rem;}#proceso h3{font-size:1.7rem;}#proceso .accordion-button{font-size:1.4rem;}#proceso .accordion-body{font-size:1.15rem;}
+  #contacto{padding:3rem 0;}#contacto h2{font-size:2rem;}.contact-form{padding:1.5rem;}
+  .footer-contact{flex-wrap:wrap;gap:1.2rem;}
+  .whatsapp-float{width:55px;height:55px;font-size:1.8rem;bottom:20px;right:20px;}
+}
